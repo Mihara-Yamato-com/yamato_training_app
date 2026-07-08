@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
   end
 
@@ -9,10 +10,14 @@ class SessionsController < ApplicationController
     user = User.find_by(email: email)
     if user && user.authenticate(password)
       session[:user_id] = user.id
-      redirect_to user_path, notice: 'ログインに成功しました'
+        if user.general?
+          redirect_to user_path, notice: 'ログインに成功しました'
+        elsif user.admin?
+          redirect_to admin_users_index_path, notice: 'ログインに成功しました'
+        end
     else
       flash.now[:alert] = 'メールアドレスまたはパスワードが正しくありません。'
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity #ブラウザに失敗したことを伝えるため
     end
   end
 

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to user_path, notice: 'ログインに成功しました'
     else
       flash.now[:alert] = 'メールアドレスまたはパスワードが正しくありません。'
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity #ブラウザに失敗したことを伝えるため
     end
   end
 

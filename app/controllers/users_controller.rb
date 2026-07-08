@@ -4,10 +4,16 @@ class UsersController < ApplicationController
   def show
     @user = current_user
   end
+    
+  def new
+    @user = User.new
+  end
+
+  def create
+  end
 
   def edit
   end
 
-  def new
-  end
+
 end

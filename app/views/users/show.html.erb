@@ -2,5 +2,5 @@
 <p>ユーザー名：<%= @user.name %></p>
 <p>メールアドレス：<%= @user.email %></p>
 <p>権限：<%= @user.role %></p>
-<%= button_to "編集", edit_user_path, method: :GET %>
+<%= button_to "編集", edit_user_path, method: :get %>
 <p><%= button_to "ログアウト", {controller:'sessions', action:'destroy'},{method: :delete} %>

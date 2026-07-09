@@ -1,6 +1,6 @@
 <h1>ユーザー編集</h1>
 
-<%= form_with url: admin_user_path, local: true do |f| %>
+<%= form_with model: [:admin, @user], local: true do |f| %>
 
     <div class="field">
         <%= f.label :name, "名前" %><br>
@@ -13,10 +13,11 @@
     </div>
 
     <div class="field">
-        <%= f.label :password, "パスワード(8文字以上)" %><br>
-        <%= f.password_field :password %>
+        <%= f.select :role, [["一般ユーザー","general"],["管理者","admin"]] %>
     </div>
     
     <%= f.submit "編集する" %>
 
 <% end %>
+
+<%= button_to "戻る", admin_users_path, method: :get %>

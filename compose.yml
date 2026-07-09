@@ -11,7 +11,7 @@ services:
 
   web:
     build: .
-    command: bin/rails server -b 0.0.0.0
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails server -b 0.0.0.0"
     volumes:
       - .:/yamato_training_app
     ports:

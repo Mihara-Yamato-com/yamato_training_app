@@ -13,10 +13,12 @@
     </div>
 
     <div class="field">
-        <%= f.label :password, "パスワード" %><br>
+        <%= f.label :password, "パスワード(8文字以上)" %><br>
         <%= f.password_field :password %>
     </div>
     
     <%= f.submit "新規ユーザー登録" %>
 
 <% end %>
+
+    <%= button_to "ログイン", login_path, method: :get %>

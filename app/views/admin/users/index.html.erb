@@ -1,0 +1,14 @@
+<h1>ユーザー一覧画面</h1>
+<p><%= button_to "ログアウト", logout_path, method: :delete %></p>
+<% @users.each do |user| %>
+    <div class="user">
+        ユーザー名:<%= user.name %><br>
+        メールアドレス :<%= user.email %><br>
+        権限：<%= user.role %><br>
+        <%= button_to "編集", edit_admin_user_path(user), method: :get %>
+        <%= button_to "削除", admin_user_path(user) , method: :delete, data: { turbo_method: :delete, turbo_confirm: "本当に消しちゃいます？ww" } %>
+    </div>
+<% end %>
+
+
+

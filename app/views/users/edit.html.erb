@@ -1,0 +1,21 @@
+<h1>ユーザー編集</h1>
+
+<%= form_with model: @user, url: user_path, method: :patch, local: true do |f| %>
+
+    <div class="field">
+        <%= f.label :name, "名前" %><br>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :email, "メールアドレス" %><br>
+        <%= f.email_field :email %>
+    </div>
+    
+    <%= f.submit "編集する" %>
+
+<% end %>
+
+<%= button_to "戻る", user_path, method: :get %>
+
+

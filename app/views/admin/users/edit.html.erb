@@ -1,0 +1,23 @@
+<h1>ユーザー編集</h1>
+
+<%= form_with model: [:admin, @user], local: true do |f| %>
+
+    <div class="field">
+        <%= f.label :name, "名前" %><br>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :email, "メールアドレス" %><br>
+        <%= f.email_field :email %>
+    </div>
+
+    <div class="field">
+        <%= f.select :role, [["一般ユーザー","general"],["管理者","admin"]] %>
+    </div>
+    
+    <%= f.submit "編集する" %>
+
+<% end %>
+
+<%= button_to "戻る", admin_users_path, method: :get %>

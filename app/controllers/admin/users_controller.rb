@@ -1,9 +1,8 @@
 class Admin::UsersController < ApplicationController
+before_action :require_admin
+
 def index
-  unless current_user.admin?
-    redirect_to user_path, alert: "権限が足りません"
-    return
-  end
+
 
   @users = User.all
 end

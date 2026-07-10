@@ -1,7 +1,12 @@
 class Admin::UsersController < ApplicationController
-  def index
-    @users = User.all
+def index
+  unless current_user.admin?
+    redirect_to user_path, alert: "権限が足りません"
+    return
   end
+
+  @users = User.all
+end
 
   def show
   end

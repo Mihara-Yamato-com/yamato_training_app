@@ -1,24 +1,25 @@
 <h1>ユーザー新規登録</h1>
 
 <%= form_with url: users_path, local: true do |f| %>
+    <div class = "field">
+        <div class="field_culumn">
+            <%= f.label :name, "名前" %><br>
+            <%= f.text_field :name, class: "form_field", placeholder: "ながい　除園" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :name, "名前" %><br>
-        <%= f.text_field :name %>
-    </div>
+        <div class="field_culumn">
+            <%= f.label :email, "メールアドレス" %><br>
+            <%= f.email_field :email, class: "form_field", placeholder: "example@example.com" %>
+        </div>
 
-    <div class="field">
-        <%= f.label :email, "メールアドレス" %><br>
-        <%= f.email_field :email %>
-    </div>
-
-    <div class="field">
-        <%= f.label :password, "パスワード(8文字以上)" %><br>
-        <%= f.password_field :password %>
+        <div class="field_culumn">
+            <%= f.label :password, "パスワード(8文字以上)" %><br>
+            <%= f.password_field :password, class: "form_field", placeholder: "comthinkpass" %>
+        </div>
     </div>
     
-    <%= f.submit "新規ユーザー登録" %>
+    <%= f.submit "新規ユーザー登録", class: "button" %>
 
 <% end %>
 
-    <%= button_to "ログイン", login_path, method: :get %>
+    <%= button_to "ログイン", login_path, method: :get, class: "button" %> 

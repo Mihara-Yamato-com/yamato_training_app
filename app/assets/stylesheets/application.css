@@ -48,12 +48,16 @@ header{
     background-color: rgb(73, 41, 216);
     display: flex;
     text-align: center;
-    weight: 10em;
+    wight: 10em;
     height: 2em
 }
 
 .form_field{
     border-color: aqua;
     border-radius: 10px;
+}
+
+::placeholder {
+  color: rgb(165, 159, 255);
 }
 

@@ -4,20 +4,15 @@
 
     <div class="field">
         <%= f.label :name, "名前" %><br>
-        <%= f.text_field :name %>
-    </div>
-
-    <div class="field">
+        <%= f.text_field :name, class: "button" %><br>
         <%= f.label :email, "メールアドレス" %><br>
-        <%= f.email_field :email %>
-    </div>
-
-    <div class="field">
+        <%= f.email_field :email, class: "button" %><br>
+        権限区分<br>
         <%= f.select :role, [["一般ユーザー","general"],["管理者","admin"]] %>
     </div>
     
-    <%= f.submit "編集する" %>
+    <%= f.submit "編集する", class: "button" %>
 
 <% end %>
 
-<%= button_to "戻る", admin_users_path, method: :get %>
+<%= button_to "戻る", admin_users_path, method: :get, class: "button" %>

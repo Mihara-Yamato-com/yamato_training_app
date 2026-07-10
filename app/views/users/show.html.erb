@@ -1,6 +1,8 @@
 <h1>ユーザー情報</h1>
+<div class="user">
 <p>ユーザー名：<%= @user.name %></p>
 <p>メールアドレス：<%= @user.email %></p>
 <p>権限：<%= @user.role %></p>
-<%= button_to "編集", edit_user_path, method: :get %>
-<p><%= button_to "ログアウト", {controller:'sessions', action:'destroy'},{method: :delete} %>
+</div>
+<%= button_to "編集", edit_user_path, method: :get, class: "button" %>
+

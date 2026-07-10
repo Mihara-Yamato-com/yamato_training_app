@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Yamato Training App" %></title>
+    <title><%= content_for(:title) || "みはっち管理" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Yamato Training App">
+    <meta name="application-name" content="みはっち管理システム">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -24,6 +24,15 @@
   </head>
 
   <body>
+  <header>
+  <div class = "header">
+    <h2>みはっちユーザー管理システム</h2>
+        <%= button_to "ユーザー情報", user_path, method: :get, class: "button" %>
+        <%= button_to "ユーザー一覧", admin_users_path, method: :get, class: "button" %>
+        <%= button_to "ログアウト"  , logout_path, method: :delete, class: "button" %>
+      </div>
+  </div class = "header">
+  </header>
    <% flash.each do |message_type, message| %>
      <div class="flash-message <%= message_type %>"><%= message %></div>
    <% end %>

@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         if user.general?
           redirect_to user_path, notice: 'ログインに成功しました'
         elsif user.admin?
-          redirect_to admin_users_path, notice: 'ログインに成功しました'
+          redirect_to admin_users_path, notice: '管理者としてログインに成功しました'
         end
     else
       flash.now[:alert] = 'メールアドレスまたはパスワードが正しくありません。'

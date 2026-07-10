@@ -4,18 +4,15 @@
 
     <div class="field">
         <%= f.label :name, "名前" %><br>
-        <%= f.text_field :name %>
-    </div>
-
-    <div class="field">
+        <%= f.text_field :name, class: "button" %><br>
         <%= f.label :email, "メールアドレス" %><br>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "button" %>
     </div>
     
-    <%= f.submit "編集する" %>
+    <%= f.submit "編集する", class: "button" %>
 
 <% end %>
 
-<%= button_to "戻る", user_path, method: :get %>
+<%= button_to "戻る", user_path, method: :get, class: "button" %>
 
 

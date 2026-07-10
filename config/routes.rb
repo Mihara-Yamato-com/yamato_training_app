@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   # 新規登録用
-  resources :users, only: [:new, :create]
+  resources :users, only: [ :new, :create ]
 
   # ログイン中の一般ユーザー用
-  resource :user, only: [:show, :edit, :update]
+  resource :user, only: [ :show, :edit, :update ]
 
   # 管理者用
   namespace :admin do

@@ -2,8 +2,6 @@ class Admin::UsersController < ApplicationController
 before_action :require_admin
 
 def index
-
-
   @users = User.all
 end
 
@@ -20,7 +18,7 @@ end
     if @user.update(user_params)
       redirect_to admin_user_path, notice: "ユーザー情報の更新に成功しました"
     else
-      flash.now[:alert] = 'ユーザー情報の更新に失敗しました。'
+      flash.now[:alert] = "ユーザー情報の更新に失敗しました。"
       render :edit, status: :unprocessable_entity
     end
   end

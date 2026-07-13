@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   # 管理者用
   namespace :admin do
-    resources :users
+    resources :users, except: [ :show ]
   end
 end

@@ -10,11 +10,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    name = params[:name]
-    email = params[:email].to_s.downcase
-    password = params[:password]
-    @user = User.new(name: name, email: email, password: password, role: :general)
+    @user = User.new(name: params[:name], email: params[:email], password: params[:password], role: :general)
       if @user.save
+        reset_session
         session[:user_id] = @user.id
         redirect_to user_path, notice: "ユーザー登録に成功しました"
       else

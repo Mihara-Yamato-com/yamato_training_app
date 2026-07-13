@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
     enum :role, { general: 0, admin: 1 }
 
+    normalizes :email, with: ->(email) { email.strip.downcase }
+
     validates :name,     presence: true, length: { maximum: 50 }
     validates :email,    presence: true, uniqueness: true, length: { maximum: 254 }
     validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
